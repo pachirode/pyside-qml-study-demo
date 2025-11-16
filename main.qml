@@ -2,8 +2,10 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
 import Qt5Compat.GraphicalEffects
+// import MyModule 1.0
 
 Window {
+    id: window
     width: 640
     height: 480
     visible: true
@@ -361,8 +363,34 @@ Window {
     //     }
     // }
 
-    custom_button{
+    // custom_button{
+    //
+    // }
 
+    // CustomButton{
+    //     MouseArea{
+    //         anchors.fill: parent
+    //         onClicked: MySingleton.changeColor()
+    //     }
+    // }
+
+    // color: MySingleton.col
+    // Connections {
+    //     target: MySingleton
+    //     onChangeColor:{
+    //         window.color = "blue"
+    //     }
+    // }
+
+    color: mySingleton.col
+
+    Rectangle {
+        width: 500
+        height: 500
+        Text {
+            anchors.centerIn: parent
+            text: test.name
+        }
     }
 }
 
